@@ -1,4 +1,4 @@
-# Refresher
+# SwiftUI Render Lock
 
 A simple library to enable precise control of rendering a view.  
 
