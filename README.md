@@ -5,7 +5,13 @@ A simple library to enable precise control of rendering a view.
 
 Sometimes you may want to pause all view updates despite how the environment is changing. This library makes it easy to pause or manually trigger view redrawing. 
 
+This library is so simple, you can just copy/paste the [relevent struct](https://github.com/gh123man/SwiftUI-RenderLock/blob/master/Sources/RenderLock/RenderLock.swift) or depend on it as a Swift package. 
+
 ## Example
+
+
+![render](https://github.com/gh123man/SwiftUI-RenderLock/assets/959778/635853c0-0c08-4791-8b32-b19cc51f1fe8)
+
 
 ## Usage 
 First add the package to your project. 
