@@ -20,6 +20,11 @@ public struct RenderDeferred<Content: View>: View {
         self.content = content()
     }
     
+    public init(with signal: Binding<Bool>, content: Content) {
+        self._signal = signal
+        self.content = content
+    }
+    
     @Binding var signal: Bool
     @ViewBuilder var content: Content
     
@@ -45,6 +50,11 @@ public struct RenderLocked<Content: View>: View {
         var body: some View {
             content
         }
+    }
+    
+    public init(with lock: Binding<Bool>, content: Content) {
+        self._lock = lock
+        self.content = content
     }
     
     public init(with lock: Binding<Bool>, content: () -> Content) {

@@ -51,10 +51,8 @@ struct Example: View {
     var body: some View {
         VStack {
             HStack {
-                // All subviews will only be redrawn with lock is false
-                RenderLocked(with: $lock) {
-                    Text("\(count)")
-                }
+                Text("\(count)")
+                    .renderLocked(with: $lock)
             }
             Button("+1") {
                 count += 1
@@ -76,11 +74,10 @@ struct LockedDemo: View {
             HStack {
                 VStack {
                     Text("Render lock")
-                    RenderLocked(with: $lock) {
-                        Text("\(count)")
-                            .font(.title)
-                            .frame(maxWidth: .infinity)
-                    }
+                    Text("\(count)")
+                        .font(.title)
+                        .frame(maxWidth: .infinity)
+                        .renderLocked(with: $lock)
                 }
                 VStack {
                     Text("Control")
@@ -113,11 +110,10 @@ struct DeferDemo: View {
             HStack {
                 VStack {
                     Text("Even only")
-                    RenderDeferred(with: $signal) {
-                        Text("\(count)")
-                            .font(.title)
-                            .frame(maxWidth: .infinity)
-                    }
+                    Text("\(count)")
+                        .font(.title)
+                        .frame(maxWidth: .infinity)
+                        .renderDeferred(with: $signal)
                 }
                 VStack {
                     Text("Control")
